@@ -46,9 +46,9 @@ read -n1 -r -p "Press any key to continue..."
 apt-get update
 apt-get install -y wireguard iptables resolvconf git python3 pip gunicorn htop apt-transport-https open-vm-tools dnsutils net-tools auditd sysstat lynis mailutils rsync sudo
 
-echo "nameserver 87.249.99.21
-nameserver 87.249.96.111
-nameserver 87.249.99.6" > /etc/resolv.conf
+#echo "nameserver 87.249.99.21
+#nameserver 87.249.96.111
+#nameserver 87.249.99.6" > /etc/resolv.conf
 
 echo "alias rm='rm -i'
 alias cp='cp -i'
