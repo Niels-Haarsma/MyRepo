@@ -109,10 +109,10 @@ sudo chmod u+x wgd.sh
 sudo ./wgd.sh install
 sudo chmod -R 755 /etc/wireguard
 
-sed -i "s/^app_port.*/app_port = 80/" wg-dashboard.ini
-sed -i "s/^peer_global_dns.*/peer_global_dns = ${CLIENT_DNS_1}/" wg-dashboard.ini
-sed -i "s/^remote_endpoint.*/remote_endpoint = ${SERVER_PUB_IP}/" wg-dashboard.ini
-sed -i "s~^peer_endpoint_allowed_ip.*~peer_endpoint_allowed_ip = ${REMOTE_SUBNETS}~" wg-dashboard.ini
+sed -i 's/^app_port.*/app_port = 80/' wg-dashboard.ini
+sed -i 's/^peer_global_dns.*/peer_global_dns = ${CLIENT_DNS_1}/' wg-dashboard.ini
+sed -i 's/^remote_endpoint.*/remote_endpoint = ${SERVER_PUB_IP}/' wg-dashboard.ini
+sed -i 's~^peer_endpoint_allowed_ip.*~peer_endpoint_allowed_ip = ${REMOTE_SUBNETS}~' wg-dashboard.ini
 
 
 echo "[Unit]
