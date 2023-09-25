@@ -105,12 +105,13 @@ systemctl enable "wg-quick@${SERVER_WG_NIC}"
 
 git clone https://github.com/donaldzou/WGDashboard.git wgdashboard
 cd wgdashboard/src
-sudo chmod u+x wgd.sh
-sudo ./wgd.sh install
-sudo chmod -R 755 /etc/wireguard
+chmod u+x wgd.sh
+pip install -r requirements.txt  --break-system-packages
+./wgd.sh install
+chmod -R 755 /etc/wireguard
 
-sudo ./wgd.sh start
-sudo ./wgd.sh stop
+./wgd.sh start
+./wgd.sh stop
 
 sed -i 's/^app_port.*/app_port = 80/' wg-dashboard.ini
 sed -i "s/^peer_global_dns.*/peer_global_dns = ${CLIENT_DNS_1}/" wg-dashboard.ini
