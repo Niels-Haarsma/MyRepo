@@ -44,7 +44,7 @@ read -n1 -r -p "Press any key to continue..."
 
 # Install WireGuard tools and module
 apt-get update
-apt-get install -y wireguard iptables resolvconf git python3 pip gunicorn htop apt-transport-https open-vm-tools dnsutils net-tools auditd sysstat lynis mailutils rsync sudo
+apt-get install -y wireguard iptables git python3 pip gunicorn htop apt-transport-https open-vm-tools dnsutils net-tools auditd sysstat lynis mailutils rsync sudo
 
 #echo "nameserver 87.249.99.21
 #nameserver 87.249.96.111
@@ -103,7 +103,7 @@ systemctl start "wg-quick@${SERVER_WG_NIC}"
 systemctl enable "wg-quick@${SERVER_WG_NIC}"
 
 
-git clone -b v3.0.6 https://github.com/donaldzou/WGDashboard.git wgdashboard
+git clone https://github.com/donaldzou/WGDashboard.git wgdashboard
 cd wgdashboard/src
 sudo chmod u+x wgd.sh
 sudo ./wgd.sh install
